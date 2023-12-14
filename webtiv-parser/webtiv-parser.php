@@ -58,7 +58,7 @@ class WebitvParser
                     'value' => $externalId
                 )
             ),
-            'post_type' => (class_exists('wordpress_plugins\estatik\includes\classes\entities\Es_Property')) ? Es_Property::get_post_type_name() : 'properties',
+            'post_type' => (class_exists('Es_Property')) ? Es_Property::get_post_type_name() : 'properties',
             'posts_per_page' => -1
         );
 
@@ -226,7 +226,7 @@ class WebitvParser
 
         } else {
             $post_id = wp_insert_post([
-                'post_type' => (class_exists('wordpress_plugins\estatik\includes\classes\entities\Es_Property')) ? Es_Property::get_post_type_name() : 'properties',
+                'post_type' => (class_exists('Es_Property')) ? Es_Property::get_post_type_name() : 'properties',
                 'post_status' => 'publish',
                 'meta_input' => $metaKeys,
                 'post_title' => $metaKeys->es_property_address,
